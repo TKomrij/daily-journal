@@ -4,7 +4,7 @@
   margin-top: 0;
   padding-top: 19.92px;
   font-family: sans-serif;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .form {
@@ -14,9 +14,15 @@
 
 .form__fieldset {
   display: flex;
-  flex-direction: column;
   border-radius: 10px;
   border: 3px solid rgb(240, 240, 24);
+}
+
+.form__fieldset_flex {
+  display: flex;
+  flex-direction: column;
+  flex-basis:50%;
+  justify-content: center;
 }
 
 .form__input {
@@ -26,11 +32,15 @@
 }
 
 .form__fill_in {
-  width: 40%;
+  width: 90%;
 }
 
 .button_container {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   margin-top: 19.92px;
+}
+
+iframe {
+  flex-basis: 50%;
 }

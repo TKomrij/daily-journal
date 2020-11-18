@@ -1,5 +1,6 @@
-@import "form.css";
-@import "header.css";
+@import "./form.css";
+@import "./header.css";
+@import "./entries.css";
 
 body {
   margin: 0;

@@ -1,0 +1,22 @@
+.entry__title {
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+.entries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.entry {
+  flex-basis: 50%;
+  list-style-type: none;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.entry__content {
+  width: 70%;
+  word-wrap: normal;
+}
