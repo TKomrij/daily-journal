@@ -1,0 +1,36 @@
+
+.entry_header {
+  text-align: center;
+  margin-top: 0;
+  padding-top: 19.92px;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.form__fieldset {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 3px solid rgb(240, 240, 24);
+}
+
+.form__input {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.form__fill_in {
+  width: 40%;
+}
+
+.button_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 19.92px;
+}

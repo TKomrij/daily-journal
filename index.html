@@ -7,13 +7,13 @@
   <title>Daily Journal</title>
 </head>
 <body>
-  <header>
-    <img src="./images/logo.jpg" alt="logo">
-    <h1>Tatiane's Daily Journal</h1>
+  <header class="header">
+    <img class="logo" src="./images/logo.jpg" alt="logo">
+    <h1 class="headline">Tatiane's Daily Journal</h1>
   </header>
   <main class="content">
-    <h2>Daily Journal</h2>
     <section class="form_container">
+      <h2 class="entry_header">Entry Form</h2>
       <form class="form" action="">
         <fieldset class="form__fieldset">
           <div class="form__input">
@@ -38,9 +38,11 @@
               <option value="mad">Mad</option>
             </select>
           </div>
+          <div class="button_container">
+            <button class="form__button" type="submit">Record Journal Entry</button>
+          </div>
         </fieldset>
       </form>
-      <button type="submit">Record Journal Entry</button>
     </section>
     <section class="entries_container">
       <ul class="entries">
