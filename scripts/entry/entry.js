@@ -1,13 +1,13 @@
 export const Entry = (entry) => {
   return `
   <li class="entry">
-    <h2 class="entry__title">Entry ${entry.id}</h2>
-    <p>Date: ${entry.date}</p>
-    <p>Concepts: ${entry.concept}</p>
-    <p class="entry__content">Entry: ${entry.content}</p>
-    <p>Mood: ${entry.mood}</p>
-    <button class="entry__edit">${entry.editButton}</button>
-    <button class="entry__delete">${entry.deleteButton}</button>
+      <h3 class="entry__title margin_left">Entry ${entry.id}</h3>
+      <p class="margin_left">Date: ${entry.date}</p>
+      <p class="margin_left">Concepts: ${entry.concept}</p>
+      <p class="entry__content margin_left">Entry: ${entry.content}</p>
+      <p class="margin_left">Mood: ${entry.mood}</p>
+      <button class="entry__edit margin_left">${entry.editButton}</button>
+      <button class="entry__delete margin_left">${entry.deleteButton}</button>
   </li>
   `
 }

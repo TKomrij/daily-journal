@@ -1,22 +1,43 @@
+.entries_header {
+  text-align: center;
+  padding: 40px 0 0 0;
+  font-family: sans-serif;
+  font-weight: 400;
+
+}
+
 .entry__title {
   font-family: sans-serif;
   font-weight: 400;
+  text-align: center;
 }
 
 .entries {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding-left: 0;
 }
 
 .entry {
-  flex-basis: 50%;
+  flex-basis: 30%;
   list-style-type: none;
   font-family: sans-serif;
   font-weight: 100;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 40px;
 }
 
 .entry__content {
   width: 70%;
   word-wrap: normal;
+}
+
+.margin_left {
+  margin-left: 10px;
+}
+
+.entry__edit, .entry__delete {
+  margin-bottom: 10px;
 }

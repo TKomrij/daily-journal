@@ -37,9 +37,10 @@
 
 .button_container {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   margin-top: 19.92px;
 }
+
 
 iframe {
   flex-basis: 50%;
