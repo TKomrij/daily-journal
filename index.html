@@ -16,51 +16,39 @@
       <h2 class="entry_header">Entry Form</h2>
       <form class="form" action="">
         <fieldset class="form__fieldset">
-          <div class="form__input">
-            <label for="journal_date">Date of Entry</label>
-            <input class="form__fill_in form__date" type="date" name="journalDate" id="journalDate">
+          <div class="form__fieldset_flex">
+            <div class="form__input">
+              <label for="journal_date">Date of Entry</label>
+              <input class="form__fill_in form__date" type="date" name="journalDate" id="journalDate">
+            </div>
+            <div class="form__input">
+              <label for="journal_concept">Concepts Covered</label>
+              <input class="form__fill_in form__concept" type="text">
+            </div>
+            <div class="form__input">
+              <label for="journal_entry">Journal Entry</label>
+              <textarea class="form__fill_in form__entry" type="text"></textarea>
+            </div>
+            <div class="form__input">
+              <label for="journal_mood">Mood for the Day</label>
+              <select class="form__fill_in" name="moods" id="moods">
+                <option value="thrilled">Thrilled</option>
+                <option value="happy">Happy</option>
+                <option value="indifferent">Indifferent</option>
+                <option value="sad">Sad</option>
+                <option value="mad">Mad</option>
+              </select>
+            </div>
+            <div class="button_container">
+              <button class="form__button" type="submit">Record Journal Entry</button>
+            </div>
           </div>
-          <div class="form__input">
-            <label for="journal_concept">Concepts Covered</label>
-            <input class="form__fill_in form__concept" type="text">
-          </div>
-          <div class="form__input">
-            <label for="journal_entry">Journal Entry</label>
-            <textarea class="form__fill_in form__entry" type="text"></textarea>
-          </div>
-          <div class="form__input">
-            <label for="journal_mood">Mood for the Day</label>
-            <select class="form__fill_in" name="moods" id="moods">
-              <option value="thrilled">Thrilled</option>
-              <option value="happy">Happy</option>
-              <option value="indifferent">Indifferent</option>
-              <option value="sad">Sad</option>
-              <option value="mad">Mad</option>
-            </select>
-          </div>
-          <div class="button_container">
-            <button class="form__button" type="submit">Record Journal Entry</button>
-          </div>
+          <iframe src="https://giphy.com/embed/3oz8xTUmZABI3PGwDe" width="500" height=350" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cute-craft-hand-made-3oz8xTUmZABI3PGwDe"></a></p>
         </fieldset>
       </form>
     </section>
     <section class="entries_container">
       <ul class="entries">
-        <li class="entry">
-          <h2 class="entry__title"></h2>
-          <button class="entry__edit"></button>
-          <button class="entry__delete"></button>
-        </li>
-        <li class="entry">
-          <h2 class="entry__title"></h2>
-          <button class="entry__edit"></button>
-          <button class="entry__delete"></button>
-        </li>
-        <li class="entry">
-          <h2 class="entry__title"></h2>
-          <button class="entry__edit"></button>
-          <button class="entry__delete"></button>
-        </li>
       </ul>
     </section>
   </main>
@@ -69,5 +57,6 @@
     <p class="footer__name"></p>
     <a class="footer__github" href="#"></a>
   </footer>
+  <script type="module" src="./scripts/main.js"></script>
 </body>
 </html>
