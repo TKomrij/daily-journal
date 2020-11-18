@@ -1,0 +1,18 @@
+.form {
+  width: 50%;
+}
+
+.form__fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__input {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.form__fill_in {
+  width: 40%;
+}
