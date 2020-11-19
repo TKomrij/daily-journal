@@ -1,7 +1,17 @@
 @import "./form.css";
 @import "./header.css";
 @import "./entries.css";
+@import "./footer.css";
+
+html {
+  height: 100%;
+}
 
 body {
   margin: 0;
+  min-height: 100%;
+}
+
+.content {
+  min-height: calc(100vh - 2.5em);
 }
