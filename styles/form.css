@@ -15,7 +15,7 @@
 .form__fieldset {
   display: flex;
   border-radius: 10px;
-  border: 3px solid rgb(240, 240, 24);
+  border: 3px solid #d4c40c;
 }
 
 .form__fieldset_flex {
