@@ -14,10 +14,20 @@ export const getEntries = () => {
       })
 }
 
-// export const useEntry = () => {
-//   const sortedByDate = entryCollection.sort(
-//     (currentEntry, nextEntry) =>
-//         Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
-// )
-// return sortedByDate
-// }
+const dispatchStateChangeEvent = () => {
+  eventHub.dispatchEvent(new CustomEvent("journalStateChanged"))
+}
+
+export const saveJournalEntry = newJournalEntry => {
+  fetch("http://localhost:8088/entries", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newJournalEntry)
+  })
+    .then(getEntries)  // <-- Get all journal entries
+    .then(dispatchStateChangeEvent)  // <-- Broadcast the state change event
+
+}
+
