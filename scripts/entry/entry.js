@@ -1,4 +1,4 @@
-export const Entry = (entry) => {
+export const EntryHTMLConverter = (entry) => {
   return `
   <li class="entry">
       <h3 class="entry__title margin_left">Entry ${entry.id}</h3>
@@ -7,7 +7,7 @@ export const Entry = (entry) => {
       <p class="entry__content margin_left">Entry: ${entry.content}</p>
       <p class="margin_left">Mood: ${entry.mood}</p>
       <button class="entry__edit margin_left">Edit</button>
-      <button class="entry__delete margin_left">Delete</button>
+      <button id="deleteEntry--${entry.id}" class="margin_left">Delete</button>
   </li>
   `
 }
