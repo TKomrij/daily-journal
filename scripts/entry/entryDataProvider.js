@@ -1,4 +1,3 @@
-
 let entries = []
 
 export const useEntry = () => {
@@ -8,14 +7,17 @@ export const useEntry = () => {
 export const getEntries = () => {
   return fetch("http://localhost:8088/entries") // Fetch from the API
       .then(response => response.json())  // Parse as JSON
-      .then(parsedEntries => { console.table(parsedEntries)
+      .then(parsedEntries => {
         entries = parsedEntries
           // What should happen when we finally have the array?
       })
 }
 
 const dispatchStateChangeEvent = () => {
-  eventHub.dispatchEvent(new CustomEvent("journalStateChanged"))
+  const eventHub = document.querySelector(".content")
+  const entryStateChangedEvent = new CustomEvent("entryStateChanged")
+
+  eventHub.dispatchEvent(entryStateChangedEvent)
 }
 
 export const saveJournalEntry = newJournalEntry => {
@@ -31,3 +33,11 @@ export const saveJournalEntry = newJournalEntry => {
 
 }
 
+
+export const deleteEntry = entryId => {
+  return fetch(`http://localhost:8088/entries/${entryId}`, {
+      method: "DELETE"
+  })
+      .then(getEntries)
+      .then(dispatchStateChangeEvent)
+}

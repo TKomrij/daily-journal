@@ -1,11 +1,25 @@
 {
-  "entries": [
+  "entries": [],
+  "moods": [
     {
-      "date": "2021-01-21",
-      "concept": "CSS",
-      "content": "Today was really cool!",
-      "mood": "thrilled",
-      "id": 1
+      "id": 1,
+      "label": "Thrilled"
+    },
+    {
+      "id": 2,
+      "label": "happy"
+    },
+    {
+      "id": 3,
+      "label": "Indifferent"
+    },
+    {
+      "id": 4,
+      "label": "Sad"
+    },
+    {
+      "id": 5,
+      "label": "Mad"
     }
   ]
 }
