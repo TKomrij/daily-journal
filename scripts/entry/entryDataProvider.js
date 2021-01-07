@@ -1,5 +1,6 @@
 let entries = []
 
+
 export const useEntry = () => {
     return entries.slice()
 }

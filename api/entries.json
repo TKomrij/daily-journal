@@ -1,5 +1,13 @@
 {
-  "entries": [],
+  "entries": [
+    {
+      "date": "2021-01-18",
+      "concept": "CSS",
+      "content": "I love CSS!",
+      "moodId": 1,
+      "id": 1
+    }
+  ],
   "moods": [
     {
       "id": 1,
