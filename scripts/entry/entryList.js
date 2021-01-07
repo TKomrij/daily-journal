@@ -1,26 +1,42 @@
 import {useEntry, getEntries, deleteEntry} from "./entryDataProvider.js"
+import {useMood} from "../mood/moodDataProvider.js"
 import {EntryHTMLConverter} from "./entry.js"
 
+const contentTarget = document.querySelector(".entries")
 const eventHub = document.querySelector(".content")
 
 eventHub.addEventListener("entryStateChanged", () => {
   entryList()
 })
 
+
+const render = (entryArray, moods) => {
+  const allEntriesConvertedToStrings = entryArray.map(
+      // convert the notes objects to HTML with NoteHTMLConverter
+      (entry) => {
+
+          // find the associated criminal for the note
+          const associatedMood = moods.find(
+              (mood) => {
+                  return mood.id === entry.moodId
+              }
+          )
+          
+          entry.moodId = associatedMood.label
+
+          return EntryHTMLConverter(entry)
+      }).join("")
+
+  contentTarget.innerHTML = allEntriesConvertedToStrings
+}
+
 export const entryList = () => {
-    getEntries().then(
-      () => {
-        const contentElement = document.querySelector(".entries")
-        const allTheEntries = useEntry()
-        let entryHTML = ""
-        for (const entryObject of allTheEntries) {
-          entryHTML += EntryHTMLConverter(entryObject)
-        // Add to the existing HTML in the content element
-        
-      }
-      contentElement.innerHTML = entryHTML
-      }
-    )
+  let moods = useMood()
+  getEntries()
+      .then(() => {
+          const allEntries = useEntry()
+          render(allEntries, moods)
+      })
 }
 
 

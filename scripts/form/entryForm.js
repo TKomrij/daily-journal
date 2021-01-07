@@ -1,11 +1,14 @@
 import { saveJournalEntry } from "../entry/entryDataProvider.js"
+import {getMoods, useMood} from "../mood/moodDataProvider.js"
+
 
 const eventHub = document.querySelector(".content")
 const contentElement = document.querySelector(".form_container")
 
-export const journalFormComponent = () => {
-  return `
-  <form class="form" action="#">
+  const render = () => {
+  const moodsCollection = useMood()
+  contentElement.innerHTML =  `
+  <form class="form">
         <fieldset class="form__fieldset">
           <div class="form__fieldset_flex">
             <div class="form__input">
@@ -23,11 +26,13 @@ export const journalFormComponent = () => {
             <div class="form__input">
               <label for="journal_mood">Mood for the Day</label>
               <select class="form__fill_in" name="moods" id="mood">
-                <option value="thrilled">Thrilled</option>
-                <option value="happy">Happy</option>
-                <option value="indifferent">Indifferent</option>
-                <option value="sad">Sad</option>
-                <option value="mad">Mad</option>
+                <option value="0">Please select a mood...</option>
+                ${
+                  moodsCollection.map(
+                    (mood) => `
+                    <option value="${ mood.id }">${ mood.label }</option>
+                `)
+                }
               </select>
             </div>
             <div class="button_container">
@@ -41,15 +46,16 @@ export const journalFormComponent = () => {
 }
 
 
-
 eventHub.addEventListener("click", clickEvent => {
   if (clickEvent.target.id === "saveNotejournalStateChanged") {
+
+    clickEvent.preventDefault()
 
       // need to gather the data from the form
       const date = document.querySelector("#date").value
       const concept = document.querySelector("#concept").value
       const content = document.querySelector("#content").value
-      const mood = document.querySelector("#mood").value
+      const moodId = parseInt(document.querySelector("#mood").value)
 
 
       // Make a new object representation of a note
@@ -57,7 +63,7 @@ eventHub.addEventListener("click", clickEvent => {
           date: date,
           concept: concept,
           content: content,
-          mood: mood
+          moodId: moodId
           // timestamp: Date.now()
       }
 
@@ -67,4 +73,7 @@ eventHub.addEventListener("click", clickEvent => {
 })
 
 
-contentElement.innerHTML += journalFormComponent()
+export const journalForm = () => {
+  getMoods()
+  .then( () => render() )
+}
