@@ -5,8 +5,9 @@ import {getMoods, useMood} from "../mood/moodDataProvider.js"
 const eventHub = document.querySelector(".content")
 const contentElement = document.querySelector(".form_container")
 
+let moodsCollection = []
+
   const render = () => {
-  const moodsCollection = useMood()
   contentElement.innerHTML =  `
   <form class="form">
         <fieldset class="form__fieldset">
@@ -75,5 +76,8 @@ eventHub.addEventListener("click", clickEvent => {
 
 export const journalForm = () => {
   getMoods()
-  .then( () => render() )
+  .then( () => {
+    moodsCollection = useMood()
+    render()
+  })
 }
