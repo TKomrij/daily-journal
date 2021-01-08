@@ -11,3 +11,11 @@ export const getMoods = () => {
     moods = parsedMoods
   })
 }
+
+const dispatchMoodStateChangeEvent = () => {
+  const eventHub = document.querySelector(".content")
+  const moodStateChangedEvent = new CustomEvent("moodStateChanged")
+
+  eventHub.dispatchEvent(moodStateChangedEvent)
+}
+
