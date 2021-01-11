@@ -53,3 +53,23 @@ eventHub.addEventListener("click", clickEvent => {
      deleteEntry(entryId)
   }
 })
+
+
+eventHub.addEventListener("moodButtonClicked", clickEvent => {
+  getEntries()
+  .then(() => {
+   
+      const moods = useMood()
+      const mood = moods.find((mood) => mood.id === parseInt(clickEvent.detail.mood))
+    
+      const entries = useEntry()
+      const matchingEntries = entries.filter( (entry) => entry.moodId === mood.id)
+
+      render(matchingEntries, moods)
+    
+      // const moodMatches = EntryHTMLConverter(matchingEntries)
+      // contentTarget.innerHTML = moodMatches
+  
+    })
+  
+})

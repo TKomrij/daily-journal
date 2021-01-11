@@ -12,10 +12,4 @@ export const getMoods = () => {
   })
 }
 
-const dispatchMoodStateChangeEvent = () => {
-  const eventHub = document.querySelector(".content")
-  const moodStateChangedEvent = new CustomEvent("moodStateChanged")
-
-  eventHub.dispatchEvent(moodStateChangedEvent)
-}
 
